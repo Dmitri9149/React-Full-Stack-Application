@@ -161,3 +161,10 @@ dist
 #####################################
 #tests
 /requests
+
+#######################################
+#fly 
+fly.toml
+Dockerfile
+.dockerignore
+build/
