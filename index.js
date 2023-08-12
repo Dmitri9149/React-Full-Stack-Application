@@ -55,12 +55,7 @@ app.delete('/api/persons/:id', (request, response) => {
   response.status(204).end()
 })
 
-const generateId = () => {
-  const maxId = persons.length > 0
-    ? Math.max(...persons.map(n => n.id))
-    : 0
-  return maxId + 1
-}
+const getRandomInt = max => Math.floor(Math.random() * max)
 
 app.post('/api/persons', (request, response) => {
   const body = request.body
@@ -74,7 +69,7 @@ app.post('/api/persons', (request, response) => {
   const person = {
     name: body.name,
     number: body.number || false,
-    id: generateId(),
+    id: getRandomInt(1_000_000_000),
   }
 
   persons = persons.concat(person)
