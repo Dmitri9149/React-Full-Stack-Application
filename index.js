@@ -45,8 +45,16 @@ app.get('/', (request, response) => {
   response.send('<h1>Hello World!</h1>')
 })
 
+/*
 app.get('/api/persons', (request, response) => {
   response.json(persons)
+})
+*/
+
+app.get('/api/persons', (request, response) => {
+  Person.find({}).then(persons => {
+    response.json(persons)
+  })
 })
 
 app.get('/api/persons/:id', (request, response) => {
