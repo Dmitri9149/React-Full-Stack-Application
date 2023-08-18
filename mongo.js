@@ -8,7 +8,7 @@ if (process.argv.length<3) {
 const password = process.argv[2]
 
 const url =
-  `mongodb+srv://full-stack:${password}@cluster0.za7oggs.mongodb.net/?retryWrites=true&w=majority`
+  `mongodb+srv://full-stack:${password}@cluster0.za7oggs.mongodb.net/phoneApp?retryWrites=true&w=majority`
 
 mongoose.set('strictQuery',false)
 mongoose.connect(url)
@@ -26,6 +26,6 @@ const person = new Person({
 })
 
 person.save().then(result => {
-  console.log('person saved!')
+  console.log(`person saved! ${result}`)
   mongoose.connection.close()
 })
