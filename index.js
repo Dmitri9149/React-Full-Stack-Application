@@ -51,8 +51,22 @@ let persons = [
 ]
 
 const date = new Date()
+/*
 app.get('/info', (request, response) => {
   response.send('<h2>Phonebook has info for ' + (persons.length).toString() + ' persons</h2><p>' + date.toString() + '</p>')
+})
+*/
+
+app.get('/info', (req, res) => {
+  Person.find({}).then(people => {
+    res.send(
+      `<div>
+        <p>There are ${people.length} records in the phonebook</p>
+        <p> ${new Date().toString()}</p>
+      </div>`
+    )
+    console.log(`Server sends size as  ${people.length}`)
+  })
 })
 
 app.get('/', (request, response) => {
@@ -173,7 +187,7 @@ app.put('/api/persons/:id', (request, response, next) => {
 
   Person.findByIdAndUpdate(request.params.id, person, { new: true })
     .then(updatedPerson => {
-      response.json(updatedPerson)
+      response.json(updated)
     })
     .catch(error => next(error))
 })
