@@ -3,6 +3,9 @@ const app = express()
 const cors = require('cors')
 require('dotenv').config()
 
+const config = require('./utils/config')
+const logger = require('./utils/logger')
+
 const Person = require('./models/person')
 
 const errorHandler = (error, request, response, next) => {
