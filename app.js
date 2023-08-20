@@ -3,13 +3,10 @@ const app = express()
 const cors = require('cors')
 const notesRouter = require('./controllers/persons')
 const middleware = require('./utils/middleware')
-require('dotenv').config()
 const config = require('./utils/config')
 const logger = require('./utils/logger')
 const morgan = require('morgan')
 const mongoose = require('mongoose')
-
-/*const Person = require('./models/person')*/
 
 mongoose.set('strictQuery', false)
 
