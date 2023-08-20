@@ -35,22 +35,22 @@ module.exports = {
     'linebreak-style': [
       'error',
       'unix'
-  ],
-  'quotes': [
+    ],
+    quotes: [
       'error',
       'single'
-  ],
-  'semi': [
+    ],
+    semi: [
       'error',
       'never'
-  ],
-  'eqeqeq': 'error',
-  'no-trailing-spaces': 'error',
-  'object-curly-spacing': [
+    ],
+    eqeqeq: 'error',
+    'no-trailing-spaces': 'error',
+    'object-curly-spacing': [
       'error', 'always'
-  ],
-  'arrow-spacing': [
-      'error', { 'before': true, 'after': true }
-  ]
+    ],
+    'arrow-spacing': [
+      'error', { before: true, after: true }
+    ]
   }
 }
