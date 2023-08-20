@@ -28,9 +28,9 @@ module.exports = {
     'react'
   ],
   rules: {
-    "indent": [
-      "error",
+    indent: [
+      'error',
       2
-  ],
+    ]
   }
 }
