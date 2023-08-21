@@ -1,7 +1,7 @@
 const express = require('express')
 const app = express()
 const cors = require('cors')
-const notesRouter = require('./controllers/persons')
+const personsRouter = require('./controllers/persons')
 const middleware = require('./utils/middleware')
 const config = require('./utils/config')
 const logger = require('./utils/logger')
@@ -25,7 +25,7 @@ app.use(express.static('dist'))
 app.use(express.json())
 app.use(middleware.requestLogger)
 
-app.use('/api/persons', notesRouter)
+app.use('/api/persons', personsRouter)
 
 morgan.token('body', function (req, res) { return JSON.stringify(req.body) })
 app.use(morgan(':method :url :body :status :res[content-length] - :response-time ms'))
